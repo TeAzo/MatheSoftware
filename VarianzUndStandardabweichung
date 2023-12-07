@@ -1,0 +1,23 @@
+  private static double berechneMittelwert(double[] arr, int anzahl) {
+        double summe = 0;
+        for (int i = 0; i < anzahl; i++) {
+            double num = arr[i];
+            summe += num;
+        }
+        return summe / anzahl;
+    }
+
+    private static double berechneVarianz(double[] arr, int anzahl) {
+        double mittelwert = berechneMittelwert(arr, anzahl);
+
+        double summe = 0;
+        for (int i = 0; i < anzahl; i++) {
+            double num = arr[i];
+            summe += Math.pow(num - mittelwert, 2);
+        }
+        return summe ;
+    }
+    private static double berechneStandardabweichung(double[] arr, int anzahl) {
+        double varianz = berechneVarianz(arr, anzahl);
+        return Math.sqrt(varianz);
+    }
