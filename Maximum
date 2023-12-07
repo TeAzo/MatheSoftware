@@ -1,0 +1,14 @@
+ private static double Max(int anzahl) throws IOException {
+        double[] werte = new double[anzahl];
+
+        for (int i = 0; i < werte.length; i++) {
+            System.out.print("Wert " + (i + 1) + " eingeben  ?");
+            werte[i] = IO.readDouble();
+        }
+
+        double max = 0;
+        for (int i = 0; i < werte.length; i++) {
+            max = Math.max(werte[i], max);
+
+        }
+        return max;
