@@ -1,0 +1,18 @@
+  private static void QuadratischeGleichung(double a, double b, double c) {
+
+        //Berechnung Diskriminante
+        double d = Math.pow(b, 2) - 4 * a * c;
+
+        if (d < 0) {
+            System.out.println("Keine Lösung vorhanden!");
+        } else if (d == 0) {
+            double ergebnis = (-b + Math.sqrt(d)) / (2 * a);
+        } else {
+            double ergebnis1 = (-b + Math.sqrt(d)) / (2 * a);
+            double ergebnis2 = (-b - Math.sqrt(d)) / (2 * a);
+
+            System.out.println("Eine Neustelle bei x = " + runden(ergebnis1));
+            System.out.println("Eine Neustelle bei x = " + runden(ergebnis2));
+
+        }
+    }
