@@ -35,7 +35,7 @@
         return Math.sqrt(varianz);
     }
 
-    private static void ausgabeErgebnisse(double mittelwert, double varianz, double standardabweichung) {
+    private static void ausgabe(double mittelwert, double varianz, double standardabweichung) {
         
         System.out.println("Mittelwert: " + runden(mittelwert));
         System.out.println("Varianz: " + runden(varianz));
