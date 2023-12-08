@@ -20,7 +20,7 @@ private static double[] werteEingabe() throws IOException {
         return max;
     }
 
-    private static void MaximumAusgabe(double min) {
-        System.out.println("Der Maximumwert beträgt: " + min);
+    private static void MaximumAusgabe(double max) {
+        System.out.println("Der Maximumwert beträgt: " + max);
     }
 }
