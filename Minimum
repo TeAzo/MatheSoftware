@@ -1,4 +1,4 @@
-    private static double[] werteEingabe() throws IOException {
+private static double[] werteEingabe() throws IOException {
 
         System.out.print("Gib die Anzahl der Zahlen ein:");
         int anzahl = IO.readInteger();
