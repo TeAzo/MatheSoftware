@@ -1,4 +1,4 @@
- private static double[] eingabe() throws IOException {
+  private static double[] eingabe() throws IOException {
         double[] werte = new double[3];
         char[] abc = {'a', 'b', 'c'};
 
@@ -12,7 +12,7 @@
         return werte;
     }
 
-  private static double[] berechnungQuadratischeGleichung(double a, double b, double c) {
+    private static double[] berechnungQuadratischeGleichung(double a, double b, double c) {
         double[] ergebnisse = new double[3];
 
         double d = Math.pow(b, 2) - 4 * a * c;
@@ -27,6 +27,9 @@
         } else {
             double ergebnis1 = (-b + Math.sqrt(d)) / (2 * a);
             double ergebnis2 = (-b - Math.sqrt(d)) / (2 * a);
+            //"Zwei Lösungen vorhanden bei: 
+            //"Eine Nullstelle bei x = " + ergebnis1
+            //"Eine Nullstelle bei x = " +  ergebnis2
             ergebnisse[0] = ergebnis1;
             ergebnisse[1] = ergebnis2;
         }
