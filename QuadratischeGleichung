@@ -1,39 +1,52 @@
-  private static double[] werteEingabe() throws IOException {
+ private static double[] eingabe() throws IOException {
         double[] werte = new double[3];
-
         char[] abc = {'a', 'b', 'c'};
 
-        System.out.println("Gib die Koeffizienten a, b und c ein:");
+        System.out.println("Gib Werte a, b und c ein:");
 
         for (int i = 0; i < werte.length; i++) {
-            System.out.print("Koeffizient " + abc[i] + ": ");
+            System.out.print("Variable " + abc[i] + ": ");
             werte[i] = IO.readDouble();
         }
 
         return werte;
     }
 
-
-    private static void berechneQuadratischeGleichung(double a, double b, double c) {
+  private static double[] berechnungQuadratischeGleichung(double a, double b, double c) {
+        double[] ergebnisse = new double[3];
 
         double d = Math.pow(b, 2) - 4 * a * c;
+        ergebnisse[2] = d;
+
+        if (d < 0) {
+            // Keine Lösung vorhanden
+        } else if (d == 0) {
+            double ergebnis = -b / (2 * a);
+            //"Eine Lösung vorhanden bei x" + ergebnis
+            ergebnisse[0] = ergebnis;
+        } else {
+            double ergebnis1 = (-b + Math.sqrt(d)) / (2 * a);
+            double ergebnis2 = (-b - Math.sqrt(d)) / (2 * a);
+            ergebnisse[0] = ergebnis1;
+            ergebnisse[1] = ergebnis2;
+        }
+
+        return ergebnisse;
+    }
+
+    private static void ausgabeQuadratischeGleichung(double a, double b, double c, double[] ergebnisse) {
+        System.out.println("Ergebnisse der Quadratischen Gleichung:");
+
+        double d = ergebnisse[2];
 
         if (d < 0) {
             System.out.println("Keine Lösung vorhanden!");
         } else if (d == 0) {
-            double ergebnis = -b / (2 * a);
-            System.out.println("Eine Lösung vorhanden bei x = " + ergebnis);
+            System.out.println("Eine Lösung vorhanden bei x = " + ergebnisse[0]);
         } else {
-            double ergebnis1 = (-b + Math.sqrt(d)) / (2 * a);
-            double ergebnis2 = (-b - Math.sqrt(d)) / (2 * a);
             System.out.println("Zwei Lösungen vorhanden bei:");
-            System.out.println("Eine Nullstelle bei x = " + ergebnis1);
-            System.out.println("Eine Nullstelle bei x = " + ergebnis2);
-
+            System.out.println("Eine Nullstelle bei x = " + ergebnisse[0]);
+            System.out.println("Eine Nullstelle bei x = " + ergebnisse[1]);
         }
     }
-
-    private static void ausgabeQuadratischeGleichung(double a, double b, double c) {
-        System.out.println("Ergebnisse der Quadratischen Gleichung:");
-        berechneQuadratischeGleichung(a, b, c);
-    }
+}
