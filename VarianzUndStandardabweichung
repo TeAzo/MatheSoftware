@@ -28,7 +28,7 @@
             double xi = arr[i];
             summe += Math.pow(xi - mittelwert, 2);
         }
-        return summe ;
+        return summe / anzahl;
     }
     private static double berechneStandardabweichung(double[] arr, int anzahl) {
         double varianz = berechneVarianz(arr, anzahl);
